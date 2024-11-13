@@ -1,0 +1,5 @@
+apache-airflow==2.9.2
+#apache-airflow==2.10.2
+pandas==2.2.3
+minio==7.2.10
+clickhouse-driver==0.2.9

@@ -1,0 +1,5 @@
+<clickhouse>
+	<builtin_dictionaries_reload_interval>3600</builtin_dictionaries_reload_interval>
+	<dictionaries_config>/etc/clickhouse-server/dicts/*_dictionary.xml</dictionaries_config>
+	<dictionaries_lazy_load>false</dictionaries_lazy_load>
+</clickhouse>

@@ -1,0 +1,72 @@
+<clickhouse>
+    <dictionary>
+        <name>GEO_IP</name>
+        <source>
+                <clickhouse>
+                    <host>localhost</host>
+                    <port>9000</port>
+                    <user>default</user>
+                    <password>admin</password>
+                    <db>geo_ip</db>
+                    <secure>0</secure>
+                    <query>SELECT id, ip_start, ip_end, region, country_code, district, city, latitude, longitude FROM geo_ip.geolocation</query>
+                </clickhouse>
+           <!--<http>
+                <url>http://5.35.88.23:8088/GEO_IP</url>
+                <format>TabSeparated</format>
+            </http>-->
+        </source>
+        <lifetime>
+            <min>3600</min>
+            <max>4800</max>
+        </lifetime>
+        <layout>
+            <range_hashed />
+        </layout>
+        <structure>
+            <id>
+                <name>id</name>
+                <type>UInt8</type>
+            </id>
+            <range_min>
+                <name>ip_start</name>
+                <type>UInt64</type>
+            </range_min>
+            <range_max>
+                <name>ip_end</name>
+                <type>UInt64</type>
+            </range_max>
+            <attribute>
+                <name>region</name>
+                <type>String</type>
+                <null_value />
+            </attribute>
+            <attribute>
+                <name>country_code</name>
+                <type>String</type>
+                <null_value />
+            </attribute>
+            <attribute>
+                <name>district</name>
+                <type>String</type>
+                <null_value />
+            </attribute>
+            <attribute>
+                <name>city</name>
+                <type>String</type>
+                <null_value />
+            </attribute>
+            <attribute>
+                <name>latitude</name>
+                <type>Float64</type>
+                <null_value />
+            </attribute>
+            <attribute>
+                <name>longitude</name>
+                <type>Float64</type>
+                <null_value />
+            </attribute>
+        </structure>
+
+    </dictionary>
+</clickhouse>
